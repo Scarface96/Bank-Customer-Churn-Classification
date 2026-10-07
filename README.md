@@ -86,3 +86,7 @@ EDA · feature engineering · classification modelling · hyperparameter tuning 
 ---
 
 👤 **Tony Mulunda** — [GitHub @Scarface96](https://github.com/Scarface96)
+
+## About This Project
+
+An end-to-end machine-learning project focused on identifying customers at risk of leaving a bank. It demonstrates exploratory analysis, feature engineering, classification, threshold tuning, hyperparameter optimisation and business-focused model evaluation using Python and scikit-learn.
