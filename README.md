@@ -14,6 +14,17 @@ Keeping an existing customer is far cheaper than winning a new one. This project
 
 **Target variable:** `Exited` (1 = customer left the bank, 0 = stayed)
 
+## 📈 Model Results
+
+Charts produced by the notebook: the ROC curve and precision/recall trade-off for logistic regression, and feature importance from the tuned random forest.
+
+<p align="center">
+  <img src="docs/images/roc_curve.png" alt="ROC curve for logistic regression, AUC 0.77" width="48%">
+  <img src="docs/images/precision_recall.png" alt="Precision and recall by decision threshold" width="48%">
+</p>
+
+<p align="center"><img src="docs/images/feature_importance.png" alt="Random forest feature importance; Age and NumOfProducts rank highest" width="70%"></p>
+
 ## 🗂️ Dataset
 
 `Bank_Churn.csv` — 10,000 rows, 13 columns:
