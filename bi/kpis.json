@@ -1,0 +1,11 @@
+{
+  "Customers": 10000,
+  "Churned customers": 2037,
+  "Churn rate": 0.2037,
+  "Balance held by churned customers": 185588095.0,
+  "Churn rate, Germany": 0.3244,
+  "Churn rate, inactive members": 0.2685,
+  "Best model": "Gradient boosting",
+  "Best model ROC AUC (held-out)": 0.863,
+  "Share of churners in riskiest 20% (held-out)": 0.617
+}

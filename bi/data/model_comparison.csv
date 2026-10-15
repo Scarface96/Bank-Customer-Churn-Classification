@@ -1,0 +1,5 @@
+model,cv_roc_auc,test_roc_auc,test_pr_auc,test_accuracy
+Gradient boosting,0.8636,0.8632,0.7112,0.8675
+Random forest (tuned),0.8583,0.8616,0.6988,0.8695
+Explainable logistic regression,0.8418,0.8446,0.6682,0.859
+Logistic regression (original),0.7628,0.7748,0.479,0.808
