@@ -1,0 +1,48 @@
+// Power BI measures for Bank Customer Churn
+// Create a measure table first (Home > Enter data > name it _Measures > Load),
+// then for each block: select _Measures > New measure > paste the block > set the format shown.
+
+// Format: #,0
+Customers =
+COUNTROWS ( fact_customer )
+
+// Format: #,0
+Churned =
+SUM ( fact_customer[Exited] )
+
+// Format: 0.0%
+Churn Rate =
+DIVIDE ( [Churned], [Customers] )
+
+// Format: 0.0%
+Overall Churn Rate =
+CALCULATE ( [Churn Rate], ALL ( fact_customer ) )
+
+// Format: +0.0%;-0.0%;0.0%
+Churn Rate vs Average =
+[Churn Rate] - [Overall Churn Rate]
+
+// Format: €#,0
+Balance Lost to Churn =
+CALCULATE ( SUM ( fact_customer[Balance] ), fact_customer[Exited] = 1 )
+
+// Format: 0.0%
+Avg Churn Risk =
+AVERAGE ( fact_customer[churn_risk] )
+
+// Format: #,0
+At-Risk Customers =
+-- Still with the bank, but scored High or Very high risk: the retention target list.
+CALCULATE (
+    [Customers],
+    fact_customer[Exited] = 0,
+    fact_customer[risk_band] IN { "High", "Very high" }
+)
+
+// Format: €#,0
+Balance at Risk =
+CALCULATE (
+    SUM ( fact_customer[Balance] ),
+    fact_customer[Exited] = 0,
+    fact_customer[risk_band] IN { "High", "Very high" }
+)
